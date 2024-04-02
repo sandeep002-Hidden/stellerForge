@@ -1,6 +1,8 @@
 import express from "express";
 import userProfile from "../controller/userProfile.js";
 import findUserHandeller from "../controller/findUser.js";
+import handelGetGroups from "../controller/handelgetGroups.js";
+
 
 const router2 = express.Router();
 
@@ -11,9 +13,7 @@ router2.route("/profile")
 .get(userProfile);
 
 router2.route("/Groups")
-.get((req,res)=>{
-    res.render("groups")
-})
+.get(handelGetGroups)
 router2.route("/problems")
 .get((req,res)=>{
     res.render("problems")

@@ -1,4 +1,4 @@
-import Groups from "../models/groups.model.js";
+import Groups from "../models/Groups.model.js";
 import projects from "../models/projects.model.js";
 import User from "../models/user.model.js";
 export default function userProfile(req, res) {
