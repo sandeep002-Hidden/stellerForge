@@ -46,7 +46,7 @@
         <button><a id="sS" type="submit" class="seeSol">See the Solutions</a></button>
         <div id="mp">
             <h1>My problems</h1>
-            <% const problems=myProblems.reverse() %>
+            <% const problems=myProblems.sort() %>
             <% problems.forEach(i=>{ %>
             <div class="prblms">
                 <h4>Type of Problem :- <%= i.typeP %></h4>
