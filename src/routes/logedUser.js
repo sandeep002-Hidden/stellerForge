@@ -4,6 +4,8 @@ import findUserHandeller from "../controller/handelGetFindUser.js";
 import handelGetGroups from "../controller/handelGetGroups.js";
 import handelGetProblems from "../controller/handelGetProblem.js";
 import handelPostGroup from "../controller/handelPostGroups.js";
+import handelPostProblems from "../controller/handelPostProblems.js";
+
 const router2 = express.Router();
 
 router2.get("/", (req, res) => {
@@ -12,7 +14,8 @@ router2.get("/", (req, res) => {
 router2.route("/profile").get(userProfile);
 
 router2.route("/Groups").get(handelGetGroups).post(handelPostGroup);
-router2.route("/problems").get(handelGetProblems);
+
+router2.route("/problems").get(handelGetProblems).post(handelPostProblems)
 router2.route("/FindProjects").get((req, res) => {
   res.render("projects", { foundProjects: [""] });
 });
