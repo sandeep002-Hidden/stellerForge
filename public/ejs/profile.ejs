@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="icon" href="/images/head.png" type="image/png">
+    <link rel="stylesheet" href="/style/common.css">
+    <link rel="stylesheet" href="/style/profile.css">
+
+</head>
+
+<body>
+
+    <div id="header">
+        <span><a id="hl">Home</a></span>
+        <span><a id="hl2" target="_blank">Groups</a></span>
+        <span><a id="hl3" target="_blank">Problems</a></span>
+        <span><a id="hl4" target="_blank">Find Projects/Idea</a></span>
+        <div>
+            <form action="/user/EditProfile" method="post" id="userS">
+                <input type="search" name="findUser" id="searchIpt" placeholder="Enter name to search">
+                <input type="submit" name="search" value="Search" id="searchBtn">
+            </form>
+        </div>
+    </div>
+    <div id="body">
+        <div id="myprojects">
+            <div id="addproject"></div>
+            <div id="pb">
+                <button onclick="addForm()" id="addProbtn">+ Add project</button>
+            </div>
+            <div class="projects">
+                <div id="cont">
+                    <h1> Code is visible here</h1>
+                    <pre id="editor">
+                </pre>
+                </div>
+                <% items.forEach(item=> { %>
+                    <div class="singlePro">
+                        <h3>Project Name-: <%= item.projectName %>
+                        </h3>
+                        <p>Aim of the project-:<%= item.AimP %>
+                        </p>
+                        <p>Details -:<%= item.projectDetails %>
+                        </p>
+                        <% for (let i=0; i < item.files.length; i++) { %>
+                            <p>File Name -:<%= item.files[i].fileName%>
+                            </p>
+                            <button onclick="readFile(<%= JSON.stringify(item) %>, <%= i %>)">Read Above File</button>
+                            <% function readFile(item, index) { let editor=document.getElementById("editor");
+                                editor.textContent=item.Codes[index].content; } %>
+                                <% } %>
+                    </div>
+                    <% }); %>
+            </div>
+        </div>
+        <div id="profile">
+            <h1 id="mpf">My Profile</h1>
+            <div class="userDetails">
+                <% userDetails.forEach(user=> { %>
+
+                    <div>
+                        <h3>Username-: <%= user.username %>
+                        </h3>
+                    </div>
+                    <div>
+                        <p>Full Name-: <%= user.fName %>
+                        </p>
+                    </div>
+                    <div>
+                        <p>Email-: <%= user.email %>
+                        </p>
+                    </div>
+                    <div>
+                        <p>Password-: <%= user.password %>
+                        </p>
+                    </div>
+                    <div>
+                        <p>Role-: <%= user.role %>
+                        </p>
+                    </div>
+                    <% }); %>
+            </div>
+            <div class="editP"><a id="editpb"><button>Edit</button></a></div>
+            <div class="media">
+                <div id="mleft">
+                    <h3 class="mheader">Following</h3>
+                    <% userDetails.forEach(user=> { %>
+                        <% user.following.forEach(i=> { %>
+                            <p>
+                                <%= i %>
+                            </p>
+                            <% }) %>
+                                <% }) %>
+                </div>
+                <div id="mright">
+                    <h3 class="mheader">followers</h3>
+                    <% userDetails.forEach(user=> { %>
+                        <% user.followers.forEach(i=> { %>
+                            <p>
+                                <%= i %>
+                            </p>
+                            <% }) %>
+                                <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="footer">
+        <p>Footer</p>
+    </div>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <script src="/js/profile.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.6/ace.js"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/Chrome");
+        editor.session.setMode("ace/mode/python");
+    </script>
+</body>
+
+</html>

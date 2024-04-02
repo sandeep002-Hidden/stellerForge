@@ -1,0 +1,39 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+#main{
+color: white;
+    height: 60vh;
+    width: 40vw;
+    background-color:black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    border: 5px solid blue;
+    border-radius: 10px;
+}
+.main form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+.main form input,label,button{
+    margin: 2vh;
+}
+.main form input{
+    height: 6vh;
+    width: 20vw;
+}
+.main form button{
+    height: 6vh;
+    width: 8vw;
+}

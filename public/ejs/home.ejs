@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="/images/head.png" type="image/png">
+    <link rel="stylesheet" href="/style/common.css">
+    <link rel="stylesheet" href="/style/home.css">
+</head>
+<body>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <div id="nav">
+        <div id="nleft">
+            <img src="/images/icon1.png" alt="">
+        </div>
+        <div id="nright">
+            <a id="sS" href="/problems/seeSolution" type="submit" class="seeSol">See Problem Solutions</a>
+            <a href="/user/FindProjects" class="seeSol">Find Projects</a>
+        </div>
+    </div>
+    <div class="circles" id="main">
+        <div id="left">
+            <p>Hello</p>
+            <p>Welcome to,
+                <span>
+                    <p id="flex">Stellar Forge</p>
+                </span>
+            </p>
+            <div id="showcase"></div>
+        </div>
+        <div id="right">
+            <div class="indiv">
+                <div class="indiv2">
+                    <button><a href="/login">
+                            <h1>Login</h1>
+                        </a></button>
+                </div>
+            </div>
+            <div class="indiv">
+                <div class="indiv2">
+                    <button><a href="/signup">
+                            <h1>Sign up</h1>
+                        </a></button>
+                </div>
+            </div>
+            <div class="indiv">
+                <div class="indiv2">
+                    <button><a href="/user/forgetPwd">
+                            <h1>Forget password</h1>
+                        </a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">@2024 Stellar Forge</div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#showcase', {
+            strings: ['Click On Login To Continue.', 'If You Are New Here Create An Account By Signup'],
+            typeSpeed: 100,
+        });
+    </script>
+</body>
+
+</html>

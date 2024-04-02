@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See solutions</title>
+    <link rel="icon" href="/images/head.png" type="image/png">
+    <link rel="stylesheet" href="/style/common.css">
+    <link rel="stylesheet" href="/style/seeSol.css">
+
+</head>
+<body>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <div class="header"></div>
+    <div class="main">
+    <% problemDetails.forEach(i=>{ %>
+        <div class="singlePS">
+            <h3>Problem Given By :- <%= i.username %></h3>
+            <p>Type of problem :- <%= i.typeP %></p>
+            <p>Description of :- <%= i.problemI %></p>
+            <h4>Solutions</h4>
+            <% for(let j=0;j<i.solutions.length;j++){ %>
+                <h4>Solutions provided by :-<%= i.sPUname[j] %></h4>
+                <p><%= i.solutions[j] %></p>
+                <% } %>
+        </div>
+    <% }) %>
+    
+    <div class="footer"></div>
+</div>
+</body>
+</html>

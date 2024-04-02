@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  overflow-y: hidden;
+}
+
+#header {
+  width: 100vw;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: black;
+  color: white;
+}
+#searchIpt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#searchIpt input {
+  height: 5vh;
+  width: 20vw;
+}
+#searchIpt button {
+  height: 6vh;
+  width: 8vw;
+}
+#searchIpt input,
+button {
+  border: 2px solid blue;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 4s ease;
+  font-weight: 900;
+}
+#searchIpt button:hover {
+  background-color: blue;
+  color: white;
+  font-size: large;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+.footer {
+  height: 10vh;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+.main {
+  height: max-content;
+  margin: 3vh 1vh;
+}
+#problemd {
+  width: 98vw;
+  height: 16vh;
+  border: 2px solid black;
+  border-radius: 5px;
+  resize: none;
+}
+.main button {
+  height: 5vh;
+  width: 10vw;
+  overflow: hidden;
+}
+.quesEntr {
+  left: 80%;
+}
+.givSol {
+  right: inherit;
+}
+.seeSol {
+  left: 25%;
+}
+.main button a {
+  text-decoration: none;
+  color: black;
+}
+#typeP {
+  height: 4vh;
+  width: 40vw;
+  resize: none;
+}
+#frm1 label {
+  display: block;
+}
+.prblms {
+  height: fit-content;
+  width: max-content;
+  margin: 1vh;
+  background-color: white;
+  text-align: left;
+}
+#mp {
+  text-align: left;
+}
+#gs {
+  z-index: -1;
+  position: relative;
+  top: 40vh;
+  left: 70vw;
+}
+#header span {
+  border: 2px solid blue;
+  border-radius: 5px;
+  padding: 5px;
+  overflow: hidden;
+}
+#header span:hover{
+  height: 5vh;
+  width: max-content+1vw;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#header span a {
+  text-decoration: none;
+}
+#header span a:hover{
+  margin: 1vh;
+}
+#header span a:link {
+  color: white;
+}
+#header span a:visited {
+  color: white;
+}
+#header span a:active {
+  color: blue;
+}

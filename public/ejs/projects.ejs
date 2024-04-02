@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find projects</title>
+    <link rel="icon" href="/images/head.png" type="image/png">
+    <link rel="stylesheet" href="/style/common.css">
+    <link rel="stylesheet" href="/style/fProjects.css">
+</head>
+
+<body>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <form action="" method="post">
+        <label for="FindP"></label>
+        <input type="text" id="FindP" name="FindP" placeholder="Enter The name Of the Project to find" required>
+        <input type="submit">
+    </form>
+    <div class="projects" id="pDiv">
+        <% foundProjects.forEach(i =>{ %>
+            <h6><%= i.username %></h6>
+            <h4><%= i.projectName %></h4>
+            <p><%= i.AimP %></p>
+            <p><%= i.projectDetails %></p>
+        <% }) %>
+    </div>
+</body>
+
+</html>

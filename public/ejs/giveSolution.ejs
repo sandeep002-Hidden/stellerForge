@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give the Solution</title>
+    <link rel="icon" href="/images/head.png" type="image/png">
+    <link rel="stylesheet" href="/style/common.css">
+    <link rel="stylesheet" href="/style/giveSol.css">
+
+</head>
+
+<body>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <div class="header">
+
+    </div>
+    <div class="main">
+        <% const problem=problems.reverse() %>
+        <% problem.forEach((i, index) => { %>
+        <div class="singlePro">
+            <h4>Username: <%= i.username %></h4>
+            <h4>Type of Problem: <%= i.typeP %></h4>
+            <h4>Description :- <%= i.problemI %></h4>
+            <form class="problem-form" method="post">
+                <input type="hidden" name="sUsername" value="<%= i.username %>">
+                <input type="hidden" name="sTypeP" value="<%= i.typeP %>">
+                <input type="hidden" name="sProblemI" value="<%= i.problemI %>">
+                <label for="sSolutions">Enter the Solution here</label>
+                <textarea name="sSolutions" id="" cols="50" rows="10" required></textarea>
+                <input type="submit" id="btnSol"  id="ertsB" value="Enter The Solution" >
+            </form>
+        </div>
+        <% }) %>
+    </div>
+    
+    <div class="footer">hoo</div>
+    <script src="/js/giveSolution.js"></script>
+</body>
+
+</html>

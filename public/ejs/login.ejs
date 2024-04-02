@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="/images/head.png" type="image/png">
+    <link rel="stylesheet" href="/style/common.css">
+    <link rel="stylesheet" href="/style/login.css">
+</head>
+<body>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <div class="nothing"></div>
+    <div id="logdv">
+        <div id="message"><h1><%= message %></h1></div>
+        <div id="mainDiv">
+            <h1>Login</h1>
+            <form action="/login" method="post" id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="dUsername" placeholder="Enter the Username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="dPassword" placeholder="Enter the password" required>
+                <button type="submit">Login</button>
+                <p>Don't remember Password ? <a href="/user/forgetPwd">Forget password</a></p>
+                <p>Have Not Yet An Account <a href="/signup">Signup To Continue</a></p>
+            </form>
+        </div>
+    </div>
+    <div class="nothing"></div>
+</body>
+</html>
