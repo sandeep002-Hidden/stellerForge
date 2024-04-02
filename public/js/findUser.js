@@ -5,9 +5,11 @@ function readFile(item, index) {
 var link1 = document.getElementById("hl");
 var link2=document.getElementById("hl2")
 var link3=document.getElementById("hl3")
+
 link1.href=`/user/profile/`
 link2.href=`/user/Groups/`
 link3.href=`/user/problems/`
+const finding=document.getElementById("finding").innerText
 var x=document.getElementById("fuName").innerHTML.slice(13)
 document.getElementById('connectbtn').addEventListener('click', async () => {
     try {
@@ -17,7 +19,7 @@ document.getElementById('connectbtn').addEventListener('click', async () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                followers:uName
+                followers:finding
             })
         });
 

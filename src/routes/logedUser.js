@@ -8,6 +8,9 @@ import handelPostGroup from "../controller/handelPostGroups.js";
 import handelPostProblems from "../controller/handelPostProblems.js";
 import handelGetGiveSolution from "../controller/handelGetGiveSolution.js";
 import handelPostGiveSolution from "../controller/handelPostGiveSolution.js";
+import addFriends from "../controller/addFriends.js";
+
+
 const router2 = express.Router();
 
 router2.get("/", (req, res) => {
@@ -36,7 +39,8 @@ router2
 
 router2
 .route("/findUser")
-.post(findUserHandeller);
+.post(findUserHandeller)
+.put(addFriends)
 
 router2
 .route("/EditProfile")
