@@ -11,6 +11,7 @@ const GroupSchema=new mongoose.Schema({
     },
     teamMembers:{
         type:Array,
+        required:true,
     },
     grpCreator:{
         type:String,

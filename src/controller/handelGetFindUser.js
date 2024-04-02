@@ -1,7 +1,7 @@
 import projects from "../models/projects.model.js";
 import User from "../models/user.model.js";
 
-export default async function findUserHandeller(req,res){
+export default async function handelFindUser(req,res){
     const findUser=req.body.findUser
     const actualUser=req.cookies.loggedInUser
     if(findUser===actualUser){
