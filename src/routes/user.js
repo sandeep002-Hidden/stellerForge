@@ -1,8 +1,11 @@
 import express from "express";
+
+
 import handelLogin from "../controller/login.js";
 import handelSignup from "../controller/signup.js";
 import sendEmail from "../controller/sendMail.js";
 import verifyMail from "../controller/verifyMail.js";
+import handelSeeSolutions from "../controller/handelseeSolutions.js";
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -28,4 +31,8 @@ router
   })
   .post(handelSignup);
 router.route("/signup/enterOTP").get(sendEmail).post(verifyMail);
+
+router
+.route("/problems/seeSolution")
+.get(handelSeeSolutions)
 export default router;
