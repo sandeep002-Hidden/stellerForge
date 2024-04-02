@@ -6,6 +6,7 @@ import handelSignup from "../controller/signup.js";
 import sendEmail from "../controller/sendMail.js";
 import verifyMail from "../controller/verifyMail.js";
 import handelSeeSolutions from "../controller/handelseeSolutions.js";
+import handelForgetPWD from "../controller/handelForgetPWD.js";
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -35,4 +36,11 @@ router.route("/signup/enterOTP").get(sendEmail).post(verifyMail);
 router
 .route("/problems/seeSolution")
 .get(handelSeeSolutions)
+
+router
+.route("/forgetPwd")
+.get((req,res)=>{
+  res.render("forgetPwd",{message:""})
+})
+.post(handelForgetPWD)
 export default router;
