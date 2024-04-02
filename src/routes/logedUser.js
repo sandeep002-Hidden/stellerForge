@@ -9,6 +9,7 @@ import handelPostProblems from "../controller/handelPostProblems.js";
 import handelGetGiveSolution from "../controller/handelGetGiveSolution.js";
 import handelPostGiveSolution from "../controller/handelPostGiveSolution.js";
 import addFriends from "../controller/addFriends.js";
+import handelFindProject from "../controller/handelFindProject.js";
 
 
 const router2 = express.Router();
@@ -35,22 +36,23 @@ router2
 .route("/FindProjects")
 .get((req, res) => {
   res.render("projects", { foundProjects: [""] });
-});
+})
+.post(handelFindProject)
 
 router2
 .route("/findUser")
 .post(findUserHandeller)
 .put(addFriends)
 
-router2
-.route("/EditProfile")
-.get((req, res) => {
-  res.send("Edit profile");
-});
+
 
 router2
 .route("/problems/giveSol")
 .get(handelGetGiveSolution)
 .post(handelPostGiveSolution);
+
+router2
+.route("/EditProfile")
+.get();
 
 export default router2;
