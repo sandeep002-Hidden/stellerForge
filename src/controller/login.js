@@ -6,7 +6,6 @@ export default function handelLogin(req, res) {
 }
   User.find({username:userName})
     .then((user) =>{
-        console.log(user)
         if(req.body.dPassword===user[0].password){
             const maxAge = 30 * 24 * 60 * 60 * 1000;
             res.cookie('loggedInUser', userName, { maxAge, httpOnly: true });
