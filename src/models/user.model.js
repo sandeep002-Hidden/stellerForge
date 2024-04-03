@@ -29,6 +29,6 @@ const userSchema=new mongoose.Schema({
     following:{
         type:Array,
     }
-},{timestamps:true})
+},{timestamps:false})
 const User=mongoose.model("test2",userSchema)
 export default User;

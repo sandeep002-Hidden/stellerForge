@@ -9,6 +9,10 @@ import fs from "fs";
 import multer from "multer";
 import myRouter from "./routes/user.js"
 import loggedUser from "./routes/logedUser.js"
+import dotenv from 'dotenv';
+dotenv.config();
+
+
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));

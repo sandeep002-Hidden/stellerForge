@@ -10,7 +10,8 @@ import handelGetGiveSolution from "../controller/handelGetGiveSolution.js";
 import handelPostGiveSolution from "../controller/handelPostGiveSolution.js";
 import addFriends from "../controller/addFriends.js";
 import handelFindProject from "../controller/handelFindProject.js";
-
+import handelGetEditProfile from "../controller/handelGetEditProfile.js";
+import handelPostEditProfile from "../controller/handelPostEditProfile.js";
 
 const router2 = express.Router();
 
@@ -53,6 +54,6 @@ router2
 
 router2
 .route("/EditProfile")
-.get();
-
+.get(handelGetEditProfile)
+.post(handelPostEditProfile)
 export default router2;
