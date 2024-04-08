@@ -93,3 +93,18 @@ body::-webkit-scrollbar {
   border-radius: 5px;
   width: 16rem;
 }
+#addMemberBtn{
+  height: 10vh;
+  width: 20vw;
+  border: 2px solid blue;
+  border-radius: 10px;
+  position: fixed;
+  top: 40vh;
+  left: 70vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  z-index: 2;
+}

@@ -6,9 +6,9 @@ var link1 = document.getElementById("hl");
 var link2=document.getElementById("hl2")
 var link3=document.getElementById("hl3")
 
-link1.href=`/user/profile/`
-link2.href=`/user/Groups/`
-link3.href=`/user/problems/`
+link1.href=`/user/profile`
+link2.href=`/user/Groups`
+link3.href=`/user/problems`
 const finding=document.getElementById("finding").innerText
 var x=document.getElementById("fuName").innerHTML.slice(13)
 document.getElementById('connectbtn').addEventListener('click', async () => {
@@ -26,7 +26,6 @@ document.getElementById('connectbtn').addEventListener('click', async () => {
         if (!response.ok) {
             throw new Error('Failed to insert data');
         }
-
         console.log('Data inserted successfully');
     } catch (error) {
         console.error('Error inserting data:', error);

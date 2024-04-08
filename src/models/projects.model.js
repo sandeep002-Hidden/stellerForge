@@ -12,7 +12,6 @@ const projectSchema=new mongoose.Schema({
     projectDetails:{
         type:String,
         required:true,
-        unique:true,
     },
     AimP:{
         type:String,

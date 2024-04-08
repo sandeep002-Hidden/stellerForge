@@ -20,15 +20,7 @@ const parentDir = path.dirname(__dirname);
 app.use(express.static("public"));
 app.set("views", path.join(parentDir, "public", "ejs"));
 app.set("view engine", "ejs");
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads");
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname);
-  },
-});
-const upload = multer({ storage: storage });
+
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -41,7 +33,15 @@ catch(error){
 }
 app.use(cookieParser());
 
-
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads");
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+const upload = multer({ storage: storage });
 app.use("/",myRouter)
 
 app.use("/user",loggedUser)

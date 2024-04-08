@@ -12,6 +12,11 @@ import addFriends from "../controller/addFriends.js";
 import handelFindProject from "../controller/handelFindProject.js";
 import handelGetEditProfile from "../controller/handelGetEditProfile.js";
 import handelPostEditProfile from "../controller/handelPostEditProfile.js";
+import addMember from "../controller/addMember.js"
+import uploadProjectFile from "../middlewares/uploadProjectFiles.js";
+
+
+
 
 const router2 = express.Router();
 
@@ -21,12 +26,14 @@ router2.get("/", (req, res) => {
 
 router2
 .route("/profile")
-.get(userProfile);
+.get(userProfile)
+.post(uploadProjectFile)
 
 router2
 .route("/Groups")
 .get(handelGetGroups)
-.post(handelPostGroup);
+.post(handelPostGroup)
+.put(addMember);
 
 router2
 .route("/problems")
