@@ -23,10 +23,10 @@
     <li></li>
     <li></li>
     <div id="header">
-        <span><a href="" id="home">Home</a></span>
-        <span><a href="" id="group">Groups</a></span>
+        <span><a href="/user" id="home">Home</a></span>
+        <span><a href="/user/Groups" id="group">Groups</a></span>
         <span><a href="" id="problems">Problems</a></span>
-        <span><a href="" id="FindProjects">Find Projects/Idea</a></span>
+        <span><a href="/user/FindProjects" id="FindProjects">Find Projects/Idea</a></span>
         <div>
             <form action="" id="searchIpt">
                 <input type="text" placeholder="Enter the problems to find">
@@ -36,23 +36,28 @@
     </div>
     <div class="main">
         <form id="frm1" method="post">
-            <label for="typeP" id=>Enter the type of Problem</label>
-            <textarea name="typeP" id="typeP" cols="10" rows="1" required></textarea>
-            <textarea name="problemI" id="problemd" cols="30" rows="10" required
+            <input type="text" id="typeP" placeholder="Enter The Type Of Problem" required>
+            <textarea name="problemI" id="problemD" cols="30" rows="10" required
                 placeholder="Enter Your problems Here!"></textarea>
-            <button type="submit" class="quesEntr">Enter</button>
+            <button type="submit" id="findProBtn" class="quesEntr">Enter</button>
         </form>
-        <button><a id="gS">Give the Solution</a></button>
-        <button><a id="sS" type="submit" class="seeSol">See the Solutions</a></button>
+        <div id="btnS">
+            <button><a id="gS">Give the Solution</a></button>
+            <button><a id="sS" type="submit" class="seeSol">See the Solutions</a></button>
+        </div>
         <div id="mp">
-            <h1>My problems</h1>
-            <% const problems=myProblems.sort() %>
-            <% problems.forEach(i=>{ %>
-            <div class="prblms">
-                <h4>Type of Problem :- <%= i.typeP %></h4>
-                <p>Description :- <%= i.problemI %></p>
+            <div id="mp2">
+                <h1 id="problemHeader">My problems</h1>
+                <% const problems=myProblems.reverse() %>
+                    <% problems.forEach(i=>{ %>
+                        <div class="prblms">
+                            <h4>Type of Problem :- <%= i.typeP %>
+                            </h4>
+                            <p>Description :- <%= i.problemI %>
+                            </p>
+                        </div>
+                        <% }) %>
             </div>
-            <% }) %>
         </div>
 
     </div>

@@ -21,18 +21,34 @@
     <li></li>
     <li></li>
     <li></li>
-    <form action="" method="post">
-        <label for="FindP"></label>
+    <div id="header">
+        <span><a id="hl" href="/user/profile">Home</a></span>
+        <span><a id="hl2" href="/user/Groups">Groups</a></span>
+        <span><a id="hl3" href="/user/problems">Problems</a></span>
+        <span><a id="hl4" href="/user/FindProjects">Find Projects/Idea</a></span>
+    </div>
+    <form method="post" id="findProjectForm">
         <input type="text" id="FindP" name="FindP" placeholder="Enter The name Of the Project to find" required>
-        <input type="submit">
+        <input type="submit" id="findPBtn" value="Enter">
     </form>
     <div class="projects" id="pDiv">
-        <% foundProjects.forEach(i =>{ %>
-            <h6><%= i.username %></h6>
-            <h4><%= i.projectName %></h4>
-            <p><%= i.AimP %></p>
-            <p><%= i.projectDetails %></p>
-        <% }) %>
+        <p><%= %></p>
+        <% foundProjects.forEach(i=>{ %>
+            <div id="singlePro">
+                <h6>
+                    <%= i.username %>
+                </h6>
+                <h4>
+                    <%= i.projectName %>
+                </h4>
+                <p>
+                    <%= i.AimP %>
+                </p>
+                <p>
+                    <%= i.projectDetails %>
+                </p>
+            </div>
+            <% }) %>
     </div>
 </body>
 

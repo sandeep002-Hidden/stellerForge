@@ -43,7 +43,7 @@ router2
 router2
 .route("/FindProjects")
 .get((req, res) => {
-  res.render("projects", { foundProjects: [""] });
+  res.render("projects", { foundProjects: [] });
 })
 .post(handelFindProject)
 

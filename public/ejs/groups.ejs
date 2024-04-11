@@ -19,22 +19,33 @@
         <span><a href="" id="FindProjects">Find Projects/Idea</a></span>
     </div>
     <div id="cGF" class="h-max w-full"></div>
-    <div id="main">
-        <% groupList.forEach(i=>{ %>
-        <div class="border-2 border-black rounded-lg m-3 w-3/5 h-16 flex items-center justify-between bg-gray-200">
-            <div>
-                <h1 class="text-2xl font-black" id="grpName"><%= i.grpName %></h1>
-                <h4 class="text-sm font-black" id="grpDes"><%= i.groupDes %></h4>
+    <div class="groups">
+        <div id="btns">
+            <div class="btns2">
+                <button id="addMemberBtn" onclick="addMember()">Add Member</button>
+                <button id="joinGrp" onclick="createGroup()">
+                    <img src="/images/images.jpg" alt="Create Logo">
+                    Create a Group
+                </button>
             </div>
-            <div class="w-1/5 border-2 border-black rounded-lg flex justify-center items-center h-3/4">Join Chat</div>
         </div>
-        <% }) %>
-        <button id="joinGrp" onclick="createGroup()">
-            <img src="/images/images.jpg" alt="Create Logo">
-            <p>Create a Group</p>
-        </button>
-        <button id="addMemberBtn" onclick="addMember()" >Add Member</button>
-
+        <div id="main">
+            <% groupList.forEach((group, index)=> { %>
+                <div
+                    class="border-2 border-black rounded-lg m-3 w-3/5 h-16 flex items-center justify-between bg-gray-200">
+                    <div>
+                        <h1 class="text-2xl font-black" id="grpName_<%= index %>">
+                            <%= group.grpName %>
+                        </h1>
+                        <h4 class="text-sm font-black" id="grpDes_<%= index %>">
+                            <%= group.groupDes %>
+                        </h4>
+                    </div>
+                    <button class="w-1/5 border-2 border-black rounded-lg flex justify-center items-center h-3/4"
+                        onclick="joinChat(<%= JSON.stringify(group) %>, <%= index %>)">Join Chat</button>
+                </div>
+                <% }) %>
+        </div>
     </div>
     <li></li>
     <li></li>
@@ -47,5 +58,26 @@
     <li></li>
     <li></li>
     <script src="/js/group.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+    <script>
+        const socket = io();
+        socket.on("connect", () => {
+        })
+        socket.on("newMessage", (text) => {
+            const div2 = document.createElement("div")
+            console.log(text)
+            const messageBox = document.getElementById("messageBox")
+            div2.innerText = text.message
+            div2.class = "singleMessage"
+            div2.innerHTML = `
+            <div class="singleMessageHeader"> 
+                <span> Message Send By-:${text.user}</span> 
+                <span> Time-:${text.time}</span>
+            </div>
+            `
+            messageBox.appendChild(div2)
+        });
+    </script>
 </body>
+
 </html>

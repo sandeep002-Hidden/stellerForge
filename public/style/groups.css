@@ -14,18 +14,45 @@ body::-webkit-scrollbar {
   background-color: black;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  border-bottom: 2px solid blue;
+
 }
-#main {
+.groups{
+  display: flex;
   height: 100vh;
   width: 100vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+#main {
+  height:100%;
+  width: 70vw;
+
+}
+#btns{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column-reverse;
+  height: 100%;
+  width: 30vw;
+}
+.btns2{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column-reverse;
+  height: 50%;
+  width: 30vw;
 }
 #joinGrp {
   height: 10vh;
   width: 20vw;
   border: 2px solid blue;
   border-radius: 10px;
-  position: fixed;
   top: 25vh;
   left: 70vw;
   display: flex;
@@ -33,7 +60,6 @@ body::-webkit-scrollbar {
   align-items: center;
   font-weight: 700;
   font-size: 1.25rem;
-  z-index: 2;
 }
 #joinGrp img {
   height: 3vh;
@@ -98,7 +124,6 @@ body::-webkit-scrollbar {
   width: 20vw;
   border: 2px solid blue;
   border-radius: 10px;
-  position: fixed;
   top: 40vh;
   left: 70vw;
   display: flex;
@@ -106,5 +131,56 @@ body::-webkit-scrollbar {
   align-items: center;
   font-weight: 700;
   font-size: 1.25rem;
-  z-index: 2;
+}
+#chatBox{
+  height: 60vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+}
+#messageBox{
+    height: 80%;
+    width: 92%;
+    border: 2px solid black;
+    border-radius: 8px;
+    background:white;
+    overflow-y: scroll;
+}
+#inputBox{
+    width: 50%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#GroupNameHeader{
+  height: 8vh;
+  width: 100%;
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.singleMessage{
+  height: fit-content;
+  width: 100%;
+  margin-top: 8px;
+  color:darkblue;
+  border-bottom:2px solid black;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.singleMessageHeader{
+  color: blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom:1px solid powderblue;
+  font-size:xx-small;
+  opacity: .5;
+  font-weight: 100;
+  height: max-content;
 }

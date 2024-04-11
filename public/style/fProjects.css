@@ -1,0 +1,59 @@
+*{
+margin: 0;
+padding: 0;
+}
+#findProjectForm{
+    width: 90vw;
+    height: 15vh;
+    margin: 5vw ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#FindP{
+    width: 60vw;
+    height: 8vh;
+    font-size:larger;
+    border-radius: 5vh;
+    border: 2px solid blue;
+}
+#findPBtn{
+    width: 10vw;
+    height: 9vh;
+    font-size:larger;
+    border-radius: 5vh;
+    border: 2px solid blue;
+
+}
+#pDiv{
+    height:fit-content;
+    width: fit-content;
+}
+#singlePro{
+    height: fit-content;
+    width: fit-content;
+    margin: 5vh 5vw;
+    padding: 2vh;
+    border: 2px solid blue;
+    border-radius: 5vh;
+}
+#header{
+    height: 15vh;
+    width: 98.7vw;
+    border-bottom: 2px solid blue;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#header span{
+    border: 2px solid blue;
+    color: white;
+    padding: 1vh 2vw;
+    border-radius: 2vw;
+}
+#header span a{
+    text-decoration: none;
+    color: white;
+
+}

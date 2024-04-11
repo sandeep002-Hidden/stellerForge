@@ -1,20 +1,28 @@
+import express from "express";
 import { fileURLToPath } from "url";
-import express, { urlencoded } from "express";
 import connectDB from "./db.js";
 import cookieParser from 'cookie-parser';
 import path from "path";
 import bodyParser from "body-parser";
-import { error, profile, warn } from "console";
-import fs from "fs";
-import multer from "multer";
 import myRouter from "./routes/user.js"
 import loggedUser from "./routes/logedUser.js"
 import dotenv from 'dotenv';
+import http from "http"
+import { Server } from 'socket.io';
+import socketIO from "./routes/socketIO.js";
+
+
+
 dotenv.config();
 
 
-
 const app = express();
+const server = http.createServer(app);
+
+const io = new Server(server);
+
+
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const parentDir = path.dirname(__dirname);
 app.use(express.static("public"));
@@ -33,20 +41,17 @@ catch(error){
 }
 app.use(cookieParser());
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads");
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname);
-  },
-});
-const upload = multer({ storage: storage });
+
+
+
 app.use("/",myRouter)
 
 app.use("/user",loggedUser)
 
 
-app.listen(4000, () => {
+io.on('connection', socketIO);
+
+
+server.listen(4000, () => {
   console.log(`Server is running on http://localhost:${4000}`);
 });

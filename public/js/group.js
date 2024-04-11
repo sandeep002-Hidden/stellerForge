@@ -58,3 +58,46 @@ function addMember() {
     }
   });
 }
+
+async function joinChat(group,index) {
+  console.log(group.groupCharts)
+  const groupName = document.getElementById(`grpName_${index}`).innerText;
+  const a = document.getElementById("cGF");
+  a.innerHTML = "";
+  const div = document.createElement("div");
+  div.id = "chatBox";
+  div.innerHTML = `
+  <div id="messageBox">
+            <div id="GroupNameHeader">${groupName}</div>
+            ${group.groupCharts.map(message => `<div class="singleMessage"><div class="singleMessageHeader"> <span> Message Send By-:${message.user}</span> <span> Time-:${message.time}</span></div> ${message.message}</div>`).join('')}
+        </div>
+        <form id="inputBox">
+            <input type="text" id="messages" placeholder="Enter and send to send Message"
+                class="h-full w-9/12 border-2 rounded-lg border-blue-700">
+            <button class="w-3/12 h-full border-2 rounded-lg border-blue-700">Enter</button>
+        </form>
+        `;
+  a.appendChild(div);
+  const form = document.getElementById("inputBox");
+  const input = document.getElementById("messages");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (input.value) {
+      const now = new Date();
+
+      const year = now.getFullYear();
+      const month = now.getMonth() + 1;
+      const day = now.getDate();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+
+      const localTime = `${year}-${month}-${day} ${hours}:${minutes}`;
+      socket.emit("messageSent", {
+        message: input.value,
+        groupName: groupName,
+        time: localTime,
+      });
+      input.value = "";
+    }
+  });
+}

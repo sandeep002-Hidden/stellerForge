@@ -17,6 +17,10 @@ const GroupSchema=new mongoose.Schema({
         type:String,
         required:true,
     },
+    groupCharts:{
+        type:Array,
+        timestamps:true
+    }
 },{timestamps:true})
 const Groups=mongoose.model("Groups",GroupSchema)
 export default Groups;
