@@ -67,13 +67,13 @@
             const div2 = document.createElement("div")
             console.log(text)
             const messageBox = document.getElementById("messageBox")
-            div2.innerText = text.message
             div2.class = "singleMessage"
             div2.innerHTML = `
             <div class="singleMessageHeader"> 
                 <span> Message Send By-:${text.user}</span> 
                 <span> Time-:${text.time}</span>
             </div>
+            <div class="singleMessage">${text.message}</div>
             `
             messageBox.appendChild(div2)
         });
