@@ -7,24 +7,16 @@
     <title>Visit Friends Profile</title>
     <link rel="icon" href="/images/head.png" type="image/png">
     <link rel="stylesheet" href="/style/common.css">
-    <link rel="stylesheet" href="/style/profile.css">
+    <link rel="stylesheet" href="/style/findUser.css">
 </head>
 
 <body>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
     <div id="header">
         <span><a id="hl">Home</a></span>
         <span><a id="hl2">Groups</a></span>
         <span><a id="hl3">Problems</a></span>
+        <span><a id="hl4">Find Projects/Idea</a></span>
+
         <div>
             <form action="" method="post" id="userS">
                 <input type="search" name="findUser" id="searchIpt" placeholder="Enter name to search">
@@ -34,73 +26,71 @@
     </div>
     <div id="body">
         <div id="myprojects">
+            <pre id="code">All The project codes are visible here</pre>
             <div class="projects">
-                <div id="cont"><h1>All The project codes are visible here</h1>
-                    <pre id="editor"></pre>
+                <% userProDetails.forEach(item=> { %>
+                    <div class="singlePro">
+                        <h3>Project Name-: <%= item.projectName %>
+                        </h3>
+                        <p>Aim of the project-:<%= item.AimP %>
+                        </p>
+                        <p>Details -:<%= item.projectDetails %>
+                        </p>
+                        <% for (let i=0; i < item.files.length; i++) { %>
+                            <p>File Name -:<%= item.files[i].fileName%>
+                            </p>
+                            <button onclick="readFile(<%= JSON.stringify(item) %>, <%= i %>)">Read Above File</button>
 
-                </div>
-                <% userProDetails.forEach(item => { %>
-                <div class="singlePro">
-                    <h3>Project Name-: <%= item.projectName %></h3>
-                    <p>Aim of the project-:<%= item.AimP %></p>
-                    <p>Details -:<%= item.projectDetails %></p>
-                    <% for (let i = 0; i < item.files.length; i++) { %>
-                    <p>File Name -:<%= item.files[i].fileName%></p>
-                    <button onclick="readFile(<%= JSON.stringify(item) %>, <%= i %>)">Read Above File</button>
+                            <% } %>
 
-                    <% } %>
-
-                </div>
-                <% }); %>
+                    </div>
+                    <% }); %>
             </div>
         </div>
         <div id="profile">
+            <button id="connectbtn">Add to Friend</button>
             <div class="userDetails">
-                <h1>profile Details</h1>
+                <h1>User Details</h1>
                 <% profileDetail.forEach(i=>{ %>
-                <div>
-                    <h3 id="fuName" class="fuD">Username :-) <span id="finding"><%= i.username %></span></h3>
-                </div>
-                <div>
-                    <h3 class="fuD">Full Name :-) <%= i.fName %></h3>
-                </div>
-                <%}) %>
+                    <div>
+                        <h3>Username :-) <span>
+                                <%= i.username %>
+                            </span></h3>
+                    </div>
+                    <div>
+                        <h3>Full Name :-) <%= i.fName %>
+                        </h3>
+                    </div>
+                    <%}) %>
             </div>
-            <div id="middle"><button id="connectbtn">Connect</button></div>
             <div class="media">
                 <div id="mleft">
                     <h3 class="mheader">Following</h3>
-                    <% profileDetail.forEach(user => { %>
-                    <% user.following.forEach(i => {  %>
-                    <p><%= i %></p>
-                    <% })  %>
-                    <% }) %>
+                    <% profileDetail.forEach(user=> { %>
+                        <% user.following.forEach(i=> { %>
+                            <p>
+                                <%= i %>
+                            </p>
+                            <% }) %>
+                                <% }) %>
 
                 </div>
                 <div id="mright">
                     <h3 class="mheader">followers</h3>
-                    <% profileDetail.forEach(user => { %>
-                    <% user.followers.forEach(i => {  %>
-                    <p><%= i %></p>
-                    <% })  %>
-                    <% }) %>
+                    <% profileDetail.forEach(user=> { %>
+                        <% user.followers.forEach(i=> { %>
+                            <p>
+                                <%= i %>
+                            </p>
+                            <% }) %>
+                                <% }) %>
                 </div>
             </div>
         </div>
     </div>
-    <div id="footer">
-        <p>Footer</p>
-    </div>
-
-
-
+    <div id="footer">@2024 Stellar Forge ▶️▶️▶️G2</div>
 
     <script src="/js/findUser.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.6/ace.js"></script>
-    <scri
-        var editor = ace.edit("editor");
-        editor.setTheme("ace/theme/Chrome");
-        editor.session.setMode("ace/mode/python");
-    </script>
 </body>
+
 </html>

@@ -9,13 +9,13 @@ function addForm() {
   form.enctype="multipart/form-data"
   form.innerHTML = `
       <h1>Add the Details of the project</h1>
-       <label for="nameP">Name of the project</label>
+       <p>Name of the project</p>
        <input type="text" name="nameP" class="ipField" required >
-       <label for="detailP">Fill the details of the project</label>
+       <p>Fill the details of the project</p>
        <textarea name="detailP" id="" cols="63" rows="10"></textarea>
-       <label for="aimP">Aim of the project</label>
+       <p>Aim of the project</p>
        <textarea name="aimP" id="" cols="63" rows="10" required></textarea>
-       <label for="files" id="proName">Choose the file</label>
+       <p>Choose the file</p>
        <input type="file" id="files" name="files" required class="ipField">
        <div id="fileDetailsContainer"></div>
        <button type="button" class="pdBtn" onclick="addFile()">Add File</button>
@@ -28,7 +28,6 @@ function addFile() {
   var fileDetailsContainer = document.getElementById("fileDetailsContainer");
   var fileDetailsDiv = document.createElement("div");
   fileDetailsDiv.innerHTML = `
-  <label for="files" id="proName">Choose the file</label>
   <input type="file" id="files" name="files" required class="ipField">
   `;
   fileDetailsContainer.appendChild(fileDetailsDiv);
@@ -62,4 +61,20 @@ function handleClick(){
   console.log(copyText.textContent)
   navigator.clipboard.writeText(copyText.textContent);
   alert("Copied to clipbord")
+}
+function seeProfileDetail(){
+  const pd=document.getElementById("userDetails")
+    const pd2=document.getElementById("media")
+    const pd3=document.getElementById("media")
+  if(document.getElementById("btn1").innerText==="See Profile Details"){
+    
+    pd.style.display="block"
+    pd2.style.display="block";
+    document.getElementById("btn1").innerText="Hide Profile Details"
+  }
+  else{
+    pd.style.display="none"
+    pd2.style.display="none";
+    document.getElementById("btn1").innerText="See Profile Details"
+  }
 }

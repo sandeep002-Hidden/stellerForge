@@ -11,44 +11,48 @@
 </head>
 
 <body>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
     <div id="header">
         <span><a id="hl" href="/user/profile">Home</a></span>
         <span><a id="hl2" href="/user/Groups">Groups</a></span>
         <span><a id="hl3" href="/user/problems">Problems</a></span>
         <span><a id="hl4" href="/user/FindProjects">Find Projects/Idea</a></span>
     </div>
-    <form method="post" id="findProjectForm">
-        <input type="text" id="FindP" name="FindP" placeholder="Enter The name Of the Project to find" required>
-        <input type="submit" id="findPBtn" value="Enter">
-    </form>
-    <div class="projects" id="pDiv">
-        <p><%= %></p>
-        <% foundProjects.forEach(i=>{ %>
-            <div id="singlePro">
-                <h6>
-                    <%= i.username %>
-                </h6>
-                <h4>
-                    <%= i.projectName %>
-                </h4>
-                <p>
-                    <%= i.AimP %>
-                </p>
-                <p>
-                    <%= i.projectDetails %>
-                </p>
-            </div>
-            <% }) %>
+    <div id="main">
+
+        <form method="post" id="findProjectForm">
+            <input type="text" id="FindP" name="FindP" placeholder="Enter The name Of the Project to find" required>
+            <input type="submit" id="findPBtn" value="Enter">
+        </form>
+        <div class="projects" id="pDiv">
+            <p>
+                <%= %>
+            </p>
+            <% foundProjects.forEach(i=>{ %>
+                <div id="singlePro">
+                    <h6>
+                        <%= i.username %>
+                    </h6>
+                    <h4>
+                        <%= i.projectName %>
+                    </h4>
+                    <p>
+                        <%= i.AimP %>
+                    </p>
+                    <p>
+                        <%= i.projectDetails %>
+                    </p>
+                </div>
+                <% }) %>
+        </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#1c1b40" fill-opacity="1"
+                    d="M0,160L60,165.3C120,171,240,181,360,208C480,235,600,277,720,245.3C840,213,960,107,1080,96C1200,85,1320,171,1380,213.3L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                </path>
+                <text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="24"
+                    font-family="Arial" font-weight="bolder">
+                    @2024 Stellar Forge ▶️▶️▶️G2
+                </text>
+            </svg>
     </div>
 </body>
 

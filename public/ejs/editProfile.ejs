@@ -10,58 +10,77 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-              }
+            theme: {
+                extend: {
+                    colors: {
+                    }
+                }
             }
-          }
         }
-      </script>
+    </script>
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
 
-<body>
-    
-    
-    <div class="w-screen mt-16 h-screen flex items-center bg-red-300 justify-center">
-        <h3 class="font-bold text-3xl"><%= message %></h3>
+<body class="overflow-x-hidden bg-gradient-to-b from-blue-500 to-teal-200">
+    <div class="w-screen bg-black h-28 flex justify-around items-center">
+        <span
+            class="hover:text-2xl hover:px-8 hover:py-4 text-white border-2 border-blue-700 rounded-2xl px-6 py-3 text-lg"><a
+                href="/user/profile" class="">Home</a></span>
+        <span
+            class="hover:text-2xl hover:px-8 hover:py-4 text-white border-2 border-blue-700 rounded-2xl px-6 py-3 text-lg"><a
+                href="/user/Groups" class="">Groups</a></span>
+        <span
+            class="hover:text-2xl hover:px-8 hover:py-4 text-white border-2 border-blue-700 rounded-2xl px-6 py-3 text-lg"><a
+                href="/user/problems" class="">Problems</a></span>
+        <span
+            class="hover:text-2xl hover:px-8 hover:py-4 text-white border-2 border-blue-700 rounded-2xl px-6 py-3 text-lg"><a
+                href="/user/FindProjects" class="">Find Projects/Idea</a></span>
+    </div>
+    <div class="w-screen mt-16 h-screen flex items-center justify-center overflow-x-hidden flex-col">
+        <h3 class="font-black text-3xl">
+            <%= message %>
+        </h3>
         <form id="updateprofile" method="post"
-            class="flex items-center justify-evenly h-full w-1/2 flex-col border-4 rounded-lg bg-black border-blue-700">
-            <label for="uname" class="text-white">Username</label>
+            class="flex items-center justify-evenly h-full w-1/2 flex-col text-xl font-bold">
+            <label for="uname" class="text-white">Username 🫣🫣🫣</label>
             <input type="text" id="uname" readonly value="<%= profileDetails[0].username %>"
-                class="border-2 border-black  rounded-md text-black bg-gray-200 w-4/12 h-8">
-            <label for="fname" class="text-white">Full Name</label>
+                class="rounded-md text-black w-8/12 h-8">
+            <label for="fname" class="text-white">Full Name 😎😎😎</label>
             <input type="text" id="fname" readonly value=" <%= profileDetails[0].fName  %>"
-                class="border-2 border-black  rounded-md text-black bg-gray-200 w-4/12 h-8">
-            <label for="uemail" class="text-white">Email</label>
+                class="rounded-md text-black w-8/12 h-8">
+            <label for="uemail" class="text-white">Email 👻👻👻</label>
             <input type="text" id="uemail" readonly value="<%= profileDetails[0].email %>"
-                class="border-2 border-black  rounded-md text-black bg-gray-200 w-4/12 h-8">
-            <label for="nPass" class="text-white">Enter the new Password</label>
+                class="rounded-md text-black w-8/12 h-8">
+            <label for="nPass" class="text-white">Enter the new Password 💀💀💀</label>
             <input type="text" id="nPass" name="newPassword" value="<%= profileDetails[0].password %>"
-                class="border-2 border-black  rounded-md text-black bg-gray-200 w-4/12 h-8">
-            <label for="nRole" class="text-white">Change Role</label>
+                class="rounded-md text-black w-8/12 h-8">
+            <label for="nRole" class="text-white">Change Role 👀👀</label>
             <input type="text" id="nRole" name="newRole" value="<%= profileDetails[0].role %>"
-                class="border-2 border-black  rounded-md text-black bg-gray-200 w-4/12 h-8">
-            <label for="rFollowing" class="text-white">Enter The Profile Name Whom You don't Want to Follow Any
-                More</label>
+                class="rounded-md text-black w-8/12 h-8">
+            <label for="rFollowing" class="text-white">Enter The username, You don't Want to Follow Any
+                More🤯🤯</label>
             <input type="text" id="rFollowing" name="removeFollowing" placeholder="Enter"
-                class="border-2 border-black  rounded-md text-black bg-gray-200 w-4/12 h-8">
-            <label for="dProject" class="text-white">Enter The Project Name You want to delete</label>
+                class="rounded-md text-black w-8/12 h-8">
+            <label for="dProject" class="text-white">Enter The Project Name You want to delete 👽👽👽</label>
             <input type="text" name="dProject" id="dProject" placeholder="Project Name"
-                class="border-2 border-black  rounded-md text-black bg-gray-200 w-4/12 h-8">
-            <input type="submit" value="Update Profile Details" class="border-2 border-black rounded-md bg-white p-2">
+                class="rounded-md text-black w-8/12 h-8">
+            <input type="submit" value="Update Profile Details🫡🫡🫡" class="rounded-lg bg-white p-2 w-8/12">
         </form>
     </div>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#4be1ec" fill-opacity="1"
+            d="M0,160L60,170.7C120,181,240,203,360,192C480,181,600,139,720,154.7C840,171,960,245,1080,256C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+        </path>
+        <text x="50%" y="80%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="24"
+            font-family="Arial" font-weight="bolder">
+            @2024 Stellar Forge ▶️G2◀️
+        </text>
+    </svg>
+
     <script>
         const uName = window.location.pathname.split("/")[3].slice(1);
         const a = document.getElementById("updateprofile")

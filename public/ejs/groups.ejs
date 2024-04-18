@@ -19,44 +19,43 @@
         <span><a href="" id="FindProjects">Find Projects/Idea</a></span>
     </div>
     <div id="cGF" class="h-max w-full"></div>
+
     <div class="groups">
         <div id="btns">
             <div class="btns2">
                 <button id="addMemberBtn" onclick="addMember()">Add Member</button>
                 <button id="joinGrp" onclick="createGroup()">
-                    <img src="/images/images.jpg" alt="Create Logo">
-                    Create a Group
+                    + Create a Group
                 </button>
             </div>
         </div>
-        <div id="main">
+        <div id="chatGroups">
             <% groupList.forEach((group, index)=> { %>
-                <div
-                    class="border-2 border-black rounded-lg m-3 w-3/5 h-16 flex items-center justify-between bg-gray-200">
+                <div class="main">
                     <div>
-                        <h1 class="text-2xl font-black" id="grpName_<%= index %>">
-                            <%= group.grpName %>
+                        <h1 id="grpName_<%= index %>">
+                            Group Name 👉🏼 <%= group.grpName %>
                         </h1>
-                        <h4 class="text-sm font-black" id="grpDes_<%= index %>">
-                            <%= group.groupDes %>
+                        <h4 id="grpDes_<%= index %>">
+                            Group Description 👉🏼 <%= group.groupDes %>
                         </h4>
                     </div>
-                    <button class="w-1/5 border-2 border-black rounded-lg flex justify-center items-center h-3/4"
-                        onclick="joinChat(<%= JSON.stringify(group) %>, <%= index %>)">Join Chat</button>
+                    <button class="" onclick="joinChat(<%= JSON.stringify(group) %>, <%= index %>)">Join Chat</button>
                 </div>
                 <% }) %>
         </div>
     </div>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#e7008a" fill-opacity="1"
+            d="M0,288L48,256C96,224,192,160,288,133.3C384,107,480,117,576,128C672,139,768,149,864,149.3C960,149,1056,139,1152,138.7C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+        </path>
+        <text x="50%" y="80%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="24"
+            font-family="Arial" font-weight="bolder">
+            @2024 Stellar Forge ▶️▶️▶️G2
+        </text>
+    </svg>
+
     <script src="/js/group.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
     <script>

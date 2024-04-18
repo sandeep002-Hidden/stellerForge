@@ -4,43 +4,20 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 #header {
-  width: 98.7vw;
+  width: 100vw;
   height: 15vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: black;
+  background: #000000;
   color: white;
-  border-bottom: 2px solid blue;
 
 }
-#searchIpt {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body::-webkit-scrollbar{
+  display: none;
 }
-#searchIpt input {
-  height: 5vh;
-  width: 20vw;
-}
-#searchIpt button {
-  height: 6vh;
-  width: 8vw;
-}
-#searchIpt input,
-button {
-  border: 2px solid blue;
-  border-radius: 5px;
-  text-align: center;
-  transition: background-color 4s ease;
-  font-weight: 900;
-}
-#searchIpt button:hover {
-  background-color: blue;
-  color: white;
-  font-size: large;
-  border: 2px solid white;
-  border-radius: 5px;
+body{
+  background: linear-gradient(#1eadf0,#0afb60);
 }
 .footer {
   height: 10vh;
@@ -57,13 +34,17 @@ button {
 #problemD {
   width: 70vw;
   height: 24vh;
-  border: 2px solid black;
-  border-radius: 1vw;
+  border: 2px solid white;
+  background: transparent;
+  color: #ffffff;
+  border-radius: 1vh;
   resize: none;
   text-align: center;
-  font-size:large;
-  border:2px solid blue;
-
+  font-size:x-large;
+  border:none;
+}
+#problemD::placeholder{
+  color: #ffffff;
 }
 .quesEntr {
   left: 80%;
@@ -84,12 +65,18 @@ button {
   resize: none;
   font-size:large;
   text-align: center;
-  border: 2px solid blue;
-  border-radius: 1vw;
+  border-radius: 1vh;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background: transparent;
+
+}
+#typeP::placeholder{
+  color: #ffffff;
 }
 #frm1{
   height: 50vh;
-  width: 98.7vw;
+  width: 100vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -105,8 +92,9 @@ button {
 #findProBtn{
   height: 6vh;
   width: 20vw;
-  border: 2px solid blue;
   border-radius: 1vw;
+  border: 2px solid white;
+  background: transparent;
 }
 
 #gs {
@@ -152,9 +140,19 @@ button {
   align-items: center;
 }
 #btnS button{
-  height: 6vh;
-  width: 20vw;
+  height: 8vh;
+  width: 24vw;
   padding: 1vh 2vw;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 1vh;
+
+}
+#btnS button a{
+  text-decoration: none;
+  color: #ffffff;
+  font-size:larger;
+  font-weight: 700;
 }
 #mp {
  width: 98.7vw;

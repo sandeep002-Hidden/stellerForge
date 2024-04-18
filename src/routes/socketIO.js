@@ -31,7 +31,7 @@ export default async function socketIO(socket) {
       },
       { $push: { groupCharts: data } }
     ).catch((error)=>{
-      console.log("Error occur while inserting The messages"+error)
+      console.log("Error occur while inserting The chat message"+error)
     })
 
     try {

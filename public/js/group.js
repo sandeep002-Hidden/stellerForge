@@ -6,8 +6,8 @@ function createGroup() {
   form.id = "groupDetailInput";
   form.action = `/user/Groups`;
   form.innerHTML = `
-        <input type="text" name="groupName" placeholder="Enter the Group name">
-        <input type="text" name="groupDes" placeholder="Enter the description">
+        <input type="text" class="input1" name="groupName" placeholder="Enter the Group name required">
+        <input type="text" class="input1" name="groupDes" placeholder="Enter the description required">
         <input type="submit" value="Create group">
     `;
   a.appendChild(form);
@@ -59,9 +59,9 @@ function addMember() {
   });
 }
 
-async function joinChat(group,index) {
-  console.log(group.groupCharts)
-  const groupName = document.getElementById(`grpName_${index}`).innerText;
+async function joinChat(group, index) {
+  console.log(group.groupCharts);
+  var groupName = document.getElementById(`grpName_${index}`).innerText.slice(16);
   const a = document.getElementById("cGF");
   a.innerHTML = "";
   const div = document.createElement("div");
@@ -69,12 +69,23 @@ async function joinChat(group,index) {
   div.innerHTML = `
   <div id="messageBox">
             <div id="GroupNameHeader">${groupName}</div>
-            ${group.groupCharts.map(message => `<div class="singleMessage"><div class="singleMessageHeader"> <span> Message Send By-:${message.user}</span> <span> Time-:${message.time}</span></div> ${message.message}</div>`).join('')}
+            ${group.groupCharts
+              .map(
+                (message) =>
+                  `
+                  <div class="singleMessage">
+                    <div class="singleMessageHeader"> 
+                      <span> Message Send By-:${message.user}</span> <span> Time-:${message.time}</span>
+                    </div>
+                   <span class="actualMessage">${message.message}</span>
+                  </div>`
+              )
+              .join("")}
         </div>
         <form id="inputBox">
             <input type="text" id="messages" placeholder="Enter and send to send Message"
-                class="h-full w-9/12 border-2 rounded-lg border-blue-700">
-            <button class="w-3/12 h-full border-2 rounded-lg border-blue-700">Enter</button>
+                >
+            <button>Send▶️</button>
         </form>
         `;
   a.appendChild(div);

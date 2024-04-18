@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+#header {
+  height: 15vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 2px solid blue;
+
+}
+.groups{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+#main {
+  height:100%;
+  width: 70vw;
+
+}
+#btns{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column-reverse;
+  height: 100%;
+  width: 30vw;
+}
+.btns2{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column-reverse;
+  height: 50%;
+  width: 30vw;
+}
+#joinGrp {
+  height: 10vh;
+  width: 20vw;
+  border: 2px solid blue;
+  border-radius: 10px;
+  top: 25vh;
+  left: 70vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+#joinGrp img {
+  height: 3vh;
+  width: 1.5vw;
+}
+#header span a {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  overflow: hidden;
+}
+#header span {
+  border: 2px solid blue;
+  border-radius: 5px;
+}
+#header span:hover {
+  height: 5vh;
+  width: max-content + 1vw;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#header span a:hover {
+  margin: 1vh;
+}
+#header span a:link {
+  color: white;
+}
+#header span a:visited {
+  color: white;
+}
+#header span a:active {
+  color: blue;
+}
+#groupDetailInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#groupDetailInput input {
+  border: 2px solid black;
+  margin: 4px;
+  border-radius: 5px;
+  width: 16rem;
+}
+#addMember{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;;
+}
+#addMember input{
+  border: 2px solid black;
+  margin: 4px;
+  border-radius: 5px;
+  width: 16rem;
+}
+#addMemberBtn{
+  height: 10vh;
+  width: 20vw;
+  border: 2px solid blue;
+  border-radius: 10px;
+  top: 40vh;
+  left: 70vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+#chatBox{
+  height: 60vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+}
+#messageBox{
+    height: 80%;
+    width: 92%;
+    border: 2px solid black;
+    border-radius: 8px;
+    background:white;
+    overflow-y: scroll;
+}
+#inputBox{
+    width: 50%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#GroupNameHeader{
+  height: 8vh;
+  width: 100%;
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.singleMessage{
+  height: fit-content;
+  width: 100%;
+  margin-top: 8px;
+  color:darkblue;
+  border-bottom:2px solid black;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.singleMessageHeader{
+  color: blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom:1px solid powderblue;
+  font-size:xx-small;
+  opacity: .5;
+  font-weight: 100;
+  height: max-content;
+}

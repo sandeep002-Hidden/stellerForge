@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="icon" href="/images/head.png" type="image/png">
-    <link rel="stylesheet" href="/style/common.css">
     <link rel="stylesheet" href="/style/profile.css">
+    <link rel="stylesheet" href="/style/common.css">
 
 </head>
 
@@ -15,9 +15,9 @@
 
     <div id="header">
         <span><a id="hl">Home</a></span>
-        <span><a id="hl2" target="_blank">Groups</a></span>
-        <span><a id="hl3" target="_blank">Problems</a></span>
-        <span><a id="hl4" target="_blank">Find Projects/Idea</a></span>
+        <span><a id="hl2">Groups</a></span>
+        <span><a id="hl3">Problems</a></span>
+        <span><a id="hl4">Find Projects/Idea</a></span>
         <div>
             <form action="/user/EditProfile" method="post" id="userS">
                 <input type="search" name="findUser" id="searchIpt" placeholder="Enter name to search">
@@ -25,18 +25,15 @@
             </form>
         </div>
     </div>
+
     <div id="body">
         <div id="myprojects">
             <div id="addproject"></div>
-            <div id="pb">
-                <button onclick="addForm()" id="addProbtn">+ Add project</button>
+
+            <div id="code">
+                <pre id="editor">Your Code Will be Visible Here</pre>
             </div>
-            <div class="projects">
-                <div id="cont">
-                    <h1> Code is visible here</h1>
-                    <pre id="editor">
-                </pre>
-                </div>
+            <div id="project">
                 <% items.forEach(item=> { %>
                     <div class="singlePro">
                         <h3>Project Name-: <%= item.projectName %>
@@ -57,10 +54,11 @@
             </div>
         </div>
         <div id="profile">
-            <h1 id="mpf">My Profile</h1>
-            <div class="userDetails">
-                <% userDetails.forEach(user=> { %>
 
+            <div id="userDetails">
+                <h1>My Profile</h1>
+
+                <% userDetails.forEach(user=> { %>
                     <div>
                         <h3>Username-: <%= user.username %>
                         </h3>
@@ -83,52 +81,46 @@
                     </div>
                     <% }); %>
             </div>
-            <div class="editP"><a id="editpb"><button>Edit</button></a></div>
-            <div class="media">
-                <div id="mleft">
-                    <h3 class="mheader">Following</h3>
-                    <% userDetails.forEach(user=> { %>
-                        <% user.following.forEach(i=> { %>
-                            <p>
-                                <%= i %>
-                            </p>
-                            <% }) %>
+            <div id="media">
+                <div id="mediaInner">
+                    <div id="mleft">
+                        <h3 class="mheader">Following</h3>
+                        <% userDetails.forEach(user=> { %>
+                            <% user.following.forEach(i=> { %>
+                                <p>
+                                    <%= i %>
+                                </p>
                                 <% }) %>
-                </div>
-                <div id="mright">
-                    <h3 class="mheader">followers</h3>
-                    <% userDetails.forEach(user=> { %>
-                        <% user.followers.forEach(i=> { %>
-                            <p>
-                                <%= i %>
-                            </p>
-                            <% }) %>
+                                    <% }) %>
+                    </div>
+                    <div id="mright">
+                        <h3 class="mheader">followers</h3>
+                        <% userDetails.forEach(user=> { %>
+                            <% user.followers.forEach(i=> { %>
+                                <p>
+                                    <%= i %>
+                                </p>
                                 <% }) %>
+                                    <% }) %>
+                    </div>
                 </div>
             </div>
+            <button class="addProbtn" id="btn1" onclick="seeProfileDetail()">See Profile Details</button>
+            <div id="editP"><a id="editpb"><button class="addProbtn">Edit Profile</button></a></div>
+            <button onclick="addForm()" class="addProbtn">+ Add project</button>
         </div>
     </div>
     </div>
-    <div id="footer">
-        <p>Footer</p>
-    </div>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#A020F0" fill-opacity="1"
+            d="M0,224L48,229.3C96,235,192,245,288,224C384,203,480,149,576,122.7C672,96,768,96,864,128C960,160,1056,224,1152,245.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+        </path>
+        <text x="50%" y="80%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="24"
+            font-family="Arial" font-weight="bolder">
+            @2024 Stellar Forge ▶️▶️▶️G2
+        </text>
+    </svg>
     <script src="/js/profile.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.6/ace.js"></script>
-    <script>
-        var editor = ace.edit("editor");
-        editor.setTheme("ace/theme/Chrome");
-        editor.session.setMode("ace/mode/python");
-    </script>
 </body>
 
 </html>
