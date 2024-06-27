@@ -12,7 +12,7 @@ export default async function sendEmail(req, res) {
       secure: true,
       auth: {
         user: myMail,
-        pass: EMAILPASS,
+        pass: process.env.EMAILPASS,
       },
     });
     const sendEmail = (email, token) => {
