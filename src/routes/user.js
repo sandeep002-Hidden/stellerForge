@@ -1,6 +1,5 @@
 import express from "express";
 
-
 import handelLogin from "../controller/login.js";
 import handelSignup from "../controller/signup.js";
 import sendEmail from "../controller/sendMail.js";
@@ -33,14 +32,12 @@ router
   .post(handelSignup);
 router.route("/signup/enterOTP").get(sendEmail).post(verifyMail);
 
-router
-.route("/problems/seeSolution")
-.get(handelSeeSolutions)
+router.route("/problems/seeSolution").get(handelSeeSolutions);
 
 router
-.route("/forgetPwd")
-.get((req,res)=>{
-  res.render("forgetPwd",{message:""})
-})
-.post(handelForgetPWD)
+  .route("/forgetPwd")
+  .get((req, res) => {
+    res.render("forgetPwd", { message: "" });
+  })
+  .post(handelForgetPWD);
 export default router;

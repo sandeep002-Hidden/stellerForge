@@ -5,6 +5,7 @@ const upload = multer({ dest: "../uploads" });
 
 export default function uploadProjectFile(req, res, next) {
   try {
+    console.log(req.body)
     upload.array("files")(req, res, async function (err) {
       if (err) {
         console.error("File upload error:", err);
@@ -22,11 +23,7 @@ export default function uploadProjectFile(req, res, next) {
           content: fileContent,
         });
       }
-      console.log(req.body);
       const { nameP, detailP, aimP } = req.body;
-      console.log();
-      console.log(files);
-      console.log(Codes);
       const username = req.cookies.loggedInUser;
       const data = {
         username,

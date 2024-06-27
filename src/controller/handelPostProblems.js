@@ -3,6 +3,8 @@ import Problems from "../models/problems.model.js";
 export default async function handelPostProblems(req,res){
     const {typeP,problemI}=req.body
     const user=req.cookies.loggedInUser
+    console.log(req.body)
+    console.log(problemI)
     const data={
         typeP:typeP,
         problemI:problemI,

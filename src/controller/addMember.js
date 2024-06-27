@@ -3,7 +3,6 @@ import Groups from "../models/Groups.model.js";
 export default async function addMember(req, res) {
   try {
     const { groupName, member } = req.body;
-
     const result = await Groups.updateOne({ grpName: groupName }, { $push: { teamMembers: member } });
 
     if (result.nModified === 1) {

@@ -33,16 +33,16 @@ body{
 
 }
 #searchIpt{
-  width: 16vw;
+  width: 20vw;
   height: 6vh;
   border-radius: 2vh;
   font-size: large;
 }
 #searchBtn{
-  width: 5vw;
+  width: 7vw;
   height: 6vh;
   border-radius: 2vh;
-  border: none;
+  border: 2px solid blue;
   text-align: center;
   font-size: large;
 }
@@ -84,7 +84,8 @@ body{
   color:darkgreen;
 }
 #project{
-  height: fit-content;
+  min-height: 100vh;
+  /* height: fit-content; */
   width: 50vw;
 }
 #code::-webkit-scrollbar{

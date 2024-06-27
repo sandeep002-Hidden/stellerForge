@@ -63,4 +63,5 @@ router2
 .route("/EditProfile")
 .get(handelGetEditProfile)
 .post(handelPostEditProfile)
+
 export default router2;

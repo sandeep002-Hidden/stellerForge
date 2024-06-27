@@ -1,60 +1,73 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-body{
-    overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
-body::-webkit-scrollbar{
-    display: none;
+body::-webkit-scrollbar {
+  display: none;
 }
-.header{
-    height: 10vh;
-    width: 100vw;
-    background-color: lightgray;
+.singlePro {
+  height: max-content;
+  width: 97vw;
+  border: 2px solid blue;
+  border-radius: 5px;
+  color: black;
+  margin: 1vh 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-.singlePro{
-    height: max-content;
-    width: 97vw;
-    border: 2px solid blue;
-    border-radius: 5px;
-    color: black;
-    margin: 1vh 1vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.problem-form textarea {
+  resize: none;
 }
-.problem-form textarea{
-resize: none;
+.problem-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.problem-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+#btnSol {
+  height: 8vh;
+  width: 16vw;
+  text-align: center;
+  margin: 1vh 2vw;
 }
-#btnSol{
-    height: 8vh;
-    width: 16vw;
-    text-align: center;
-    margin: 1vh 2vw;
+.main {
+  height: fit-content;
+  width: 100vw;
+  overflow-x: scroll;
+  top: 12vh;
 }
-.main{
-    height: 80vh;
-    width: 100vw;
-    overflow-x: scroll;
-    position: absolute;
-    top: 12vh;
-    z-index: -2;
+.main::-webkit-scrollbar {
+  display: none;
 }
-.main::-webkit-scrollbar{
-    display: none;
+.footer {
+  height: 10vh;
+  width: 100vw;
 }
-.footer{
-    height: 10vh;
-    width: 100vw;
-    background-color: black;
-    position: absolute;
-    bottom: 0;
+#header {
+  height: 16vh;
+  width: 100vw;
+  background: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
+#header span a {
+  text-decoration: none;
+  font-size: larger;
+  color: white;
+}
+#header span {
+  border: 2px solid blue;
+  border-radius: 2vh;
+  overflow: hidden;
+  padding: 1vh 1vw;
+}
+#header span:hover{
+    padding: 2vh 2vw;
+  
+  }

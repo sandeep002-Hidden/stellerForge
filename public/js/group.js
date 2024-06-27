@@ -61,7 +61,9 @@ function addMember() {
 
 async function joinChat(group, index) {
   console.log(group.groupCharts);
-  var groupName = document.getElementById(`grpName_${index}`).innerText.slice(16);
+  var groupName = document
+    .getElementById(`grpName_${index}`)
+    .innerText.slice(16);
   const a = document.getElementById("cGF");
   a.innerHTML = "";
   const div = document.createElement("div");

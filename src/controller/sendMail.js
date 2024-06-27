@@ -4,8 +4,7 @@ export default async function sendEmail(req, res) {
     const min = 100000;
     const otp = Math.floor(Math.random() * (max - min + 1)) + min;
     console.log(`otp is ${otp}`)
-    const myMail = "minorpro76@gmail.com";
-    const myPassword = "minor@Project2";
+    const myMail = process.env.EMAIL;
     const transporter = nodemailer.createTransport({
       service: "gmail",
       host: "smtp.gmail.com",
@@ -13,7 +12,7 @@ export default async function sendEmail(req, res) {
       secure: true,
       auth: {
         user: myMail,
-        pass: "juzp xrgd ikwm kgpx",
+        pass: EMAILPASS,
       },
     });
     const sendEmail = (email, token) => {

@@ -2,6 +2,7 @@ import projects from "../models/projects.model.js";
 import User from "../models/user.model.js";
 
 export default async function handelFindUser(req,res){
+  console.log(req.body)
     const findUser=req.body.findUser
     const actualUser=req.cookies.loggedInUser
     if(findUser===actualUser){
